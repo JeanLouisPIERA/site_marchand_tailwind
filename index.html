@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma tite place de marché</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style> 
+        .menu-item { 
+            cursor: pointer; 
+            border: 1px solid black; 
+            padding: 10px; text-align: center; 
+        } 
+        .menu-item:hover, .menu-item:focus { 
+            background-color: #D3D3D3; 
+        } 
+        .content { 
+            display: none; 
+        } 
+        #content1:target, #content2:target, #content3:target, #content4:target { 
+            display: block; 
+        } 
+        #content1:target ~ .menu-item[href="#content1"],
+        #content2:target ~ .menu-item[href="#content2"], 
+        #content3:target ~ .menu-item[href="#content3"], 
+        #content4:target ~ .menu-item[href="#content4"] { 
+            background-color: #D3D3D3; 
+        }
+        .grid-container { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 0; 
+        }
+        .content-container { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+            background-color: #F5F5DC; 
+            padding: 20px; } 
+        .block { 
+            background-color: #D2B48C; 
+            padding: 10px; 
+            text-align: center; 
+        } 
+        .block img { 
+            display: block; 
+            margin: 0 auto; 
+        } 
+        .block h3 { 
+            font-weight: bold; 
+            margin-top: 10px; 
+        } 
+        .block p { 
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-orange-100 border-solid border-orange-200 border-b-4 p-7 flex justify-between items-center h-16">
+        <h1 class="text-xl font-semibold">Ma tite place de marché </h1> 
+            <div class="flex items-center space-x-4 mx-4"> 
+                <div class="border-l border-black h-full mx-4">
+                <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mx-4"> Se déconnecter </button> 
+                </div>
+                <img src="/images/telechargement.png" alt="Téléchargement" class="w-6 h-6 mx-4">   
+            </div>
+    </header> 
+
+    <main> 
+        <div class="bg-beige p-4"> 
+            <div class="flex justify-between items-center"> 
+                <h2 class="text-lg font-semibold">Menu</h2> 
+            </div> 
+            <div class="flex justify-between items-center mt-2"> 
+                <a href="#content1" class="menu-item p-2">Élément 1</a> 
+                <a href="#content2" class="menu-item p-2">Élément 2</a> 
+                <a href="#content3" class="menu-item p-2">Élément 3</a> 
+                <a href="#content4" class="menu-item p-2">Élément 4</a> 
+            </div> 
+        </div> 
+        <div id="content1" class="content p-4"> 
+            <div class="content-container"> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/ordi1.png" alt="Image 1">
+                    </a> 
+                    <h3>Ordi 1</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 10€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/ordi2.png" alt="Image 2">
+                    </a> 
+                    <h3>Ordi 2</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 20€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/ordi3.png" alt="Image 3">
+                    </a> 
+                    <h3>Ordi 3</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 30€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/ordi4.png" alt="Image 4">
+                    </a> 
+                    <h3>Ordi 4</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 40€</p> 
+                </div> 
+            </div> 
+        </div> 
+        <div id="content2" class="content p-4"> 
+            <div class="content-container"> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/ordi2.png" alt="Image 1">
+                    </a> 
+                    <h3>Titre 1</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 10€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/ordi3.png" alt="Image 2"></a> 
+                        <h3>Titre 2</h3> 
+                        <p>Description sur deux lignes.</p> 
+                        <p>Prix : 20€</p> 
+                    </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/ordi4.png" alt="Image 3">
+                    </a> 
+                    <h3>Titre 3</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 30€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/ordi1.png" alt="Image 4">
+                    </a> 
+                    <h3>Titre 4</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 40€</p> 
+                </div> 
+            </div> 
+        </div> 
+        <div id="content3" class="content p-4"> 
+            <div class="content-container"> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/image1.png" alt="Image 1">
+                    </a> <h3>Titre 1</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 10€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/image2.png" alt="Image 2">
+                    </a> 
+                    <h3>Titre 2</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 20€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/image3.png" alt="Image 3">
+                    </a> 
+                    <h3>Titre 3</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 30€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/image4.png" alt="Image 4">
+                    </a> 
+                    <h3>Titre 4</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 40€</p> 
+                </div> 
+            </div> 
+        </div> 
+        <div id="content4" class="content p-4"> 
+            <div class="content-container"> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/image1.png" alt="Image 1">
+                    </a> <h3>Titre 1</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 10€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/image2.png" alt="Image 2">
+                    </a> 
+                    <h3>Titre 2</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 20€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/image3.png" alt="Image 3">
+                    </a> 
+                    <h3>Titre 3</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 30€</p> 
+                </div> 
+                <div class="block"> 
+                    <a href="https://example.com">
+                        <img src="/images/image4.png" alt="Image 4">
+                    </a> <h3>Titre 4</h3> 
+                    <p>Description sur deux lignes.</p> 
+                    <p>Prix : 40€</p> 
+                </div> 
+            </div>
+        </div>
+    </main> 
+
+    <footer class="bg-orange-100 border-solid border-orange-200 border-t-4 text-center text-sm p-7"> 
+        <p>Copyright @Jean-Louis </p> 
+    </footer>
+
+</body>
+
+</html>
